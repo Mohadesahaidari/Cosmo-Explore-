@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmo Explore — Mohadesa Haidari</title>
+  <meta name="description" content="Cosmo Explore — an immersive journey through planets, galaxies and the night sky." />
+
+  <!-- Tailwind CSS: the project uses HTML + Tailwind only -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            glow: '0 0 45px rgba(139, 92, 246, 0.18)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-[#030712] text-white font-sans antialiased selection:bg-violet-500/30">
+
+  <!-- Background atmosphere -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-violet-700/10 blur-3xl"></div>
+    <div class="absolute top-1/3 -right-40 h-[32rem] w-[32rem] rounded-full bg-blue-600/10 blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-fuchsia-600/5 blur-3xl"></div>
+    <div class="absolute inset-0 opacity-20"
+      style="background-image: radial-gradient(circle, rgba(255,255,255,.65) 1px, transparent 1px); background-size: 42px 42px;">
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#030712]/75 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#home" class="group flex items-center gap-3">
+        <span class="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-lg shadow-glow transition group-hover:scale-105">✦</span>
+        <div>
+          <p class="text-sm font-extrabold tracking-[0.22em]">COSMO</p>
+          <p class="text-[10px] font-medium tracking-[0.32em] text-white/40">EXPLORE</p>
+        </div>
+      </a>
+
+      <div class="hidden items-center gap-7 text-sm text-white/65 md:flex">
+        <a href="#planets" class="transition hover:text-white">Planets</a>
+        <a href="#solar-system" class="transition hover:text-white">Solar System</a>
+        <a href="#deep-space" class="transition hover:text-white">Deep Space</a>
+        <a href="#news" class="transition hover:text-white">Space News</a>
+      </div>
+
+      <a href="#night-sky" class="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold transition hover:border-violet-400/40 hover:bg-violet-500/10">
+        Look Up ↑
+      </a>
+    </nav>
+  </header>
+
+  <main id="home">
+
+    <!-- HERO -->
+    <section class="relative flex min-h-screen items-center overflow-hidden pt-24">
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=2200&q=85"
+          alt="Earth viewed from space"
+          class="h-full w-full object-cover opacity-45"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/75 to-[#030712]/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-[#030712]/60"></div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-7xl px-5 py-24 lg:px-8">
+        <div class="max-w-3xl">
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-white/65 backdrop-blur">
+            <span class="h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_15px_rgba(167,139,250,.9)]"></span>
+            A JOURNEY BEYOND THE KNOWN
+          </div>
+
+          <h1 class="text-5xl font-extrabold leading-[0.95] tracking-[-0.05em] sm:text-7xl lg:text-8xl">
+            Explore
+            <span class="bg-gradient-to-r from-violet-300 via-white to-blue-300 bg-clip-text text-transparent">
+              the Universe.
+            </span>
+          </h1>
+
+          <p class="mt-7 max-w-2xl text-base leading-7 text-white/60 sm:text-lg">
+            Discover distant worlds, magnificent galaxies, mysterious black holes
+            and the stories hidden above our night sky.
+          </p>
+
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#planets" class="rounded-full bg-white px-6 py-3 text-sm font-bold text-[#030712] transition hover:-translate-y-0.5 hover:bg-violet-100">
+              Start Exploring
+            </a>
+            <a href="#deep-space" class="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+              Enter Deep Space
+            </a>
+          </div>
+
+          <div class="mt-12 grid max-w-xl grid-cols-3 gap-5 border-t border-white/10 pt-6">
+            <div>
+              <p class="text-2xl font-bold">8</p>
+              <p class="mt-1 text-xs text-white/40">Planets</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold">100B+</p>
+              <p class="mt-1 text-xs text-white/40">Galaxies</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold">∞</p>
+              <p class="mt-1 text-xs text-white/40">Questions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANETS -->
+    <section id="planets" class="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.28em] text-violet-300">01 / Our Neighbors</p>
+          <h2 class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Meet the planets.</h2>
+        </div>
+        <p class="max-w-md text-sm leading-6 text-white/45">
+          Eight worlds. Eight completely different stories. Start your journey from the closest planet to the Sun.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+        <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-1 hover:border-orange-300/30 hover:bg-white/[0.06]">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg" alt="Mercury" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080b14] to-transparent"></div>
+            <span class="absolute bottom-4 left-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-bold tracking-widest backdrop-blur">01</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">Mercury</h3>
+            <p class="mt-2 text-sm leading-6 text-white/45">The smallest planet and the closest world to our Sun.</p>
+          </div>
+        </article>
+
+        <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/30 hover:bg-white/[0.06]">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" alt="Venus" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080b14] to-transparent"></div>
+            <span class="absolute bottom-4 left-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-bold tracking-widest backdrop-blur">02</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">Venus</h3>
+            <p class="mt-2 text-sm leading-6 text-white/45">A brilliant world wrapped in a thick, scorching atmosphere.</p>
+          </div>
+        </article>
+
+        <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/[0.06]">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" alt="Earth" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080b14] to-transparent"></div>
+            <span class="absolute bottom-4 left-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-bold tracking-widest backdrop-blur">03</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">Earth</h3>
+            <p class="mt-2 text-sm leading-6 text-white/45">Our home world — the only known planet with life.</p>
+          </div>
+        </article>
+
+        <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-1 hover:border-red-300/30 hover:bg-white/[0.06]">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" alt="Mars" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080b14] to-transparent"></div>
+            <span class="absolute bottom-4 left-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-bold tracking-widest backdrop-blur">04</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">Mars</h3>
+            <p class="mt-2 text-sm leading-6 text-white/45">The red planet, shaped by ancient water and a dramatic past.</p>
+          </div>
+        </article>
+
+        <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-1 hover:border-orange-200/30 hover:bg-white/[0.06]">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg" alt="Jupiter" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080b14] to-transparent"></div>
+            <span class="absolute bottom-4 left-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-bold tracking-widest backdrop-blur">05</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">Jupiter</h3>
+            <p class="mt-2 text-sm leading-6 text-white/45">A gas giant famous for its enormous storms and Great Red Spot.</p>
+          </div>
+        </article>
+
+        <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-1 hover:border-yellow-200/30 hover:bg-white/[0.06]">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg" alt="Saturn" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080b14] to-transparent"></div>
+            <span class="absolute bottom-4 left-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-bold tracking-widest backdrop-blur">06</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">Saturn</h3>
+            <p class="mt-2 text-sm leading-6 text-white/45">The ringed giant, surrounded by one of the Solar System's icons.</p>
+          </div>
+        </article>
+
+        <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-1 hover:border-cyan-200/30 hover:bg-white/[0.06]">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg" alt="Uranus" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080b14] to-transparent"></div>
+            <span class="absolute bottom-4 left-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-bold tracking-widest backdrop-blur">07</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">Uranus</h3>
+            <p class="mt-2 text-sm leading-6 text-white/45">An ice giant with a remarkable sideways rotation.</p>
+          </div>
+        </article>
+
+        <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/[0.06]">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg" alt="Neptune" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080b14] to-transparent"></div>
+            <span class="absolute bottom-4 left-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-bold tracking-widest backdrop-blur">08</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">Neptune</h3>
+            <p class="mt-2 text-sm leading-6 text-white/45">A distant blue giant with some of the fastest winds known.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SOLAR SYSTEM -->
+    <section id="solar-system" class="border-y border-white/10 bg-white/[0.02]">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-24 lg:grid-cols-2 lg:px-8">
+        <div class="relative overflow-hidden rounded-[2rem] border border-white/10">
+          <img
+            src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&w=1400&q=85"
+            alt="Space and stars"
+            class="h-[30rem] w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <p class="text-xs font-bold tracking-[0.25em] text-violet-200">THE SOLAR SYSTEM</p>
+            <p class="mt-2 text-2xl font-bold">One star. Eight worlds.</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.28em] text-violet-300">02 / Home System</p>
+          <h2 class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Everything starts here.</h2>
+          <p class="mt-6 leading-7 text-white/55">
+            Our Solar System is a small neighborhood inside the Milky Way. At its center,
+            the Sun holds the planets and countless smaller objects in its gravitational embrace.
+          </p>
+
+          <div class="mt-8 grid gap-3 sm:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+              <p class="text-sm font-bold">01 — The Sun</p>
+              <p class="mt-1 text-xs leading-5 text-white/40">The star at the center of our system.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+              <p class="text-sm font-bold">02 — Inner Worlds</p>
+              <p class="mt-1 text-xs leading-5 text-white/40">Mercury, Venus, Earth and Mars.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+              <p class="text-sm font-bold">03 — Gas Giants</p>
+              <p class="mt-1 text-xs leading-5 text-white/40">Jupiter and Saturn dominate the giants.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+              <p class="text-sm font-bold">04 — Ice Giants</p>
+              <p class="mt-1 text-xs leading-5 text-white/40">Uranus and Neptune mark the outer realm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEEP SPACE -->
+    <section id="deep-space" class="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="text-xs font-bold uppercase tracking-[0.28em] text-violet-300">03 / Beyond Our System</p>
+        <h2 class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Enter deep space.</h2>
+        <p class="mt-5 leading-7 text-white/50">
+          The farther we look, the stranger the universe becomes.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-5 md:grid-cols-3">
+        <article class="group relative min-h-[28rem] overflow-hidden rounded-[2rem] border border-white/10">
+          <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=85" alt="Colorful galaxy" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 p-7">
+            <p class="text-xs font-bold tracking-[0.25em] text-violet-200">01</p>
+            <h3 class="mt-2 text-3xl font-bold">Galaxies</h3>
+            <p class="mt-3 text-sm leading-6 text-white/60">Vast collections of stars, gas, dust and dark matter.</p>
+          </div>
+        </article>
+
+        <article class="group relative min-h-[28rem] overflow-hidden rounded-[2rem] border border-white/10">
+          <img src="https://images.unsplash.com/photo-1534791547706-9d2f8f6c7d8d?auto=format&fit=crop&w=1200&q=85" alt="Nebula in deep space" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 p-7">
+            <p class="text-xs font-bold tracking-[0.25em] text-violet-200">02</p>
+            <h3 class="mt-2 text-3xl font-bold">Nebulae</h3>
+            <p class="mt-3 text-sm leading-6 text-white/60">Cosmic clouds where stars are born, evolve and sometimes leave their mark.</p>
+          </div>
+        </article>
+
+        <article class="group relative min-h-[28rem] overflow-hidden rounded-[2rem] border border-white/10">
+          <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&w=1200&q=85" alt="Stars in space" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 p-7">
+            <p class="text-xs font-bold tracking-[0.25em] text-violet-200">03</p>
+            <h3 class="mt-2 text-3xl font-bold">Black Holes</h3>
+            <p class="mt-3 text-sm leading-6 text-white/60">Regions where gravity becomes so strong that even light cannot escape.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news" class="border-y border-white/10 bg-white/[0.02]">
+      <div class="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+        <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.28em] text-violet-300">04 / Space Journal</p>
+            <h2 class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Space news.</h2>
+          </div>
+          <span class="w-fit rounded-full border border-white/10 px-4 py-2 text-xs text-white/40">Curated stories · 2026</span>
+        </div>
+
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+          <article class="rounded-3xl border border-white/10 bg-white/[0.035] p-6 transition hover:bg-white/[0.06]">
+            <p class="text-xs font-semibold text-violet-300">MISSIONS</p>
+            <h3 class="mt-4 text-xl font-bold">Humanity keeps pushing farther.</h3>
+            <p class="mt-3 text-sm leading-6 text-white/45">From robotic explorers to new observatories, every mission adds another piece to the cosmic puzzle.</p>
+            <a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block text-sm font-semibold text-white hover:text-violet-200">Explore NASA ↗</a>
+          </article>
+
+          <article class="rounded-3xl border border-white/10 bg-white/[0.035] p-6 transition hover:bg-white/[0.06]">
+            <p class="text-xs font-semibold text-violet-300">OBSERVATION</p>
+            <h3 class="mt-4 text-xl font-bold">A deeper look into the cosmos.</h3>
+            <p class="mt-3 text-sm leading-6 text-white/45">Modern space telescopes allow astronomers to study distant stars, galaxies and worlds in extraordinary detail.</p>
+            <a href="https://science.nasa.gov/universe/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block text-sm font-semibold text-white hover:text-violet-200">Discover more ↗</a>
+          </article>
+
+          <article class="rounded-3xl border border-white/10 bg-white/[0.035] p-6 transition hover:bg-white/[0.06]">
+            <p class="text-xs font-semibold text-violet-300">DISCOVERY</p>
+            <h3 class="mt-4 text-xl font-bold">The universe is still full of surprises.</h3>
+            <p class="mt-3 text-sm leading-6 text-white/45">Every observation can challenge what we think we know — and open a new question.</p>
+            <a href="https://www.esa.int/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block text-sm font-semibold text-white hover:text-violet-200">Visit ESA ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NIGHT SKY -->
+    <section id="night-sky" class="relative overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2200&q=85" alt="Night sky full of stars" class="absolute inset-0 h-full w-full object-cover opacity-35" />
+      <div class="absolute inset-0 bg-[#030712]/75"></div>
+
+      <div class="relative mx-auto max-w-7xl px-5 py-28 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-xs font-bold uppercase tracking-[0.32em] text-violet-200">05 / Look Up</p>
+          <h2 class="mt-5 text-5xl font-extrabold tracking-[-0.04em] sm:text-7xl">
+            There is a universe
+            <span class="text-violet-200">above you.</span>
+          </h2>
+          <p class="mx-auto mt-6 max-w-xl text-sm leading-7 text-white/55 sm:text-base">
+            Step outside. Find a dark sky. Look up. The night is not empty — it is filled with stories written in light.
+          </p>
+          <a href="#home" class="mt-8 inline-flex rounded-full border border-white/15 bg-white/10 px-6 py-3 text-sm font-semibold backdrop-blur transition hover:bg-white/15">
+            Back to the beginning ↑
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT CREATOR -->
+    <section class="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-violet-500/10 via-white/[0.025] to-blue-500/10 p-8 sm:p-12">
+        <div class="flex flex-col justify-between gap-10 md:flex-row md:items-end">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.28em] text-violet-300">The Creator</p>
+            <h2 class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Mohadesa Haidari</h2>
+            <p class="mt-5 max-w-2xl text-sm leading-7 text-white/50">
+              Cosmo Explore is a creative web design project built to turn curiosity about the universe
+              into an immersive digital experience.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-sm text-white/60">
+            <span class="block text-xs uppercase tracking-widest text-white/30">Project</span>
+            <span class="mt-1 block font-semibold text-white">Web Design · 2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left lg:px-8">
+      <div>
+        <p class="font-bold tracking-[0.2em]">COSMO EXPLORE</p>
+        <p class="mt-1 text-xs text-white/30">Explore beyond what you know.</p>
+      </div>
+      <p class="text-xs text-white/30">
+        Designed &amp; Developed by <span class="text-white/60">Mohadesa Haidari</span> · © 2026
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
